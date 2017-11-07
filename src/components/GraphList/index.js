@@ -4,7 +4,7 @@ import Separator from '../Separator'
 import { Graph } from '../../logic/Graph'
 
 let nodes = [
-	{sValue: "I'm first" , numValue: 1},
+	{sValue: "I'm first, but should be last" , numValue: 5},
 	{sValue: "I'm second", numValue: 2},
 	{sValue: "I'm third" , numValue: 3},
 	{sValue: "I'm fourth", numValue: 4},

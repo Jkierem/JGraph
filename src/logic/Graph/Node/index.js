@@ -1,4 +1,3 @@
-
 class Node {
   constructor( data={} ) {
     this.data = data;
@@ -14,4 +13,6 @@ class Node {
   }
 }
 
-export default Node;
+export default Node ;
+
+export const nodeComparator = (a,b) => { return a.node.data.numValue - b.node.data.numValue }

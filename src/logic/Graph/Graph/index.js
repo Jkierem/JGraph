@@ -1,4 +1,5 @@
 import Node from '../Node';
+import PriorityQueue from '../PriorityQueue'
 
 class Graph{
   constructor( ){
@@ -83,6 +84,21 @@ class Graph{
       }
     }
     return path.includes(this.nodes[end].node)
+  }
+
+  dijkstra = ( start , end ) =>{
+    //TODO: implement
+  }
+
+  findPaths = ( start , end ) =>{
+    let paths = [] //paths to be returned
+    //TODO: implement
+    //there is a path or has less than 3 paths
+    //while( paths.lenght < 3 && this.checkIfPathExists( start , end ) ){
+      //try dijkstra
+      //take away intermediate nodes
+    //}
+    return paths
   }
 
 }
