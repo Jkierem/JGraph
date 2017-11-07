@@ -53,7 +53,36 @@ class Graph{
           this.arcs[start] = {};
       }
       this.arcs[start][end] ={cost: value}
+      nodes[start].node.addNeighbor( nodes[end].node );
     }
+  }
+
+  checkIfPathExists = ( start , end ) => {
+    const { nodes } = this;
+    var hasPath = false
+    if( nodes[start] !== undefined && nodes[end] !== undefined ){
+      hasPath = this.bfs( start , end );
+    }
+    return hasPath
+  }
+
+  bfs = ( start , end ) =>{
+    var currentNode = this.nodes[start].node
+    var path = []
+    var queue = []
+    path.push( currentNode )
+    queue.push( currentNode )
+    while( queue.length !== 0 ){
+      var node = queue.shift()
+      var nbrs = node.neighbors
+      for( var i = 0 ; i < nbrs.length ; i++ ){
+        if( !path.includes( nbrs[i] ) ){
+          path.push( nbrs[i] )
+          queue.push( nbrs[i] )
+        }
+      }
+    }
+    return path.includes(this.nodes[end].node)
   }
 
 }

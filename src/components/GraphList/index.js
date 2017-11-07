@@ -1,5 +1,7 @@
 import React from 'react'
-import { Graph , Node } from '../../logic/Graph'
+import NodeComponent from '../NodeComponent'
+import Separator from '../Separator'
+import { Graph } from '../../logic/Graph'
 
 let nodes = [
 	{sValue: "I'm first" , numValue: 1},
@@ -9,10 +11,10 @@ let nodes = [
 ]
 
 let arcs = [
-	{start:1,end:2,value:1},
-	{start:0,end:2,value:1},
+	{start:2,end:1,value:1},
+	{start:2,end:0,value:1},
+	{start:2,end:3,value:1},
 	{start:3,end:2,value:1},
-	{start:2,end:3,value:1}
 ]
 
 class GraphList extends React.Component{
@@ -25,6 +27,8 @@ class GraphList extends React.Component{
 		let g = new Graph();
 		g.addNodesFromDataArray( nodes );
 		g.addDirectedArcs(arcs );
+		console.log( g );
+		console.log( g.checkIfPathExists( 0, 1) )
 		this.setState({
 			graph: g
 		})
@@ -32,14 +36,20 @@ class GraphList extends React.Component{
 
 	renderGraphInfo = () =>{
 		const { graph: { nodes } } = this.state;
-		let info = nodes.map((item) => {
-			return <NodeComponent key={item.key} node={item} />
-		})
+		let info = []
+		info.push(<Separator key={-1} />)
+		info.push(nodes.map((item) => {
+			return <NodeComponent key={item.key} node={item.node} />
+		}))
 		return info;
 	}
 
 	render(){
-		return(<div/>);
+		return(
+			<div>
+				{this.renderGraphInfo()}
+			</div>
+		);
 	}
 }
 
