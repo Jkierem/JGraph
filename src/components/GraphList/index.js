@@ -1,21 +1,7 @@
 import React from 'react'
 import NodeComponent from '../NodeComponent'
 import Separator from '../Separator'
-import { Graph } from '../../logic/Graph'
-
-let nodes = [
-	{sValue: "I'm first, but should be last" , numValue: 5},
-	{sValue: "I'm second", numValue: 2},
-	{sValue: "I'm third" , numValue: 3},
-	{sValue: "I'm fourth", numValue: 4},
-]
-
-let arcs = [
-	{start:2,end:1,value:1},
-	{start:2,end:0,value:1},
-	{start:2,end:3,value:1},
-	{start:3,end:2,value:1},
-]
+import { Graph , PriorityQueue } from '../../logic/Graph'
 
 class GraphList extends React.Component{
 	constructor(props){
@@ -25,10 +11,18 @@ class GraphList extends React.Component{
 
 	componentWillMount = () =>{
 		let g = new Graph();
-		g.addNodesFromDataArray( nodes );
-		g.addDirectedArcs(arcs );
-		console.log( g );
-		console.log( g.checkIfPathExists( 0, 1) )
+		g.addVertex('monte', {B: 7, C: 8});
+		g.addVertex('B', {monte: 7, F: 2});
+		g.addVertex('C', {monte: 8, F: 6, G: 4});
+		g.addVertex('D', {F: 8});
+		g.addVertex('E', {H: 1});
+		g.addVertex('F', {B: 2, C: 6, D: 8, G: 9, H: 3});
+		g.addVertex('G', {C: 4, F: 9});
+		g.addVertex('H', {E: 1, F: 3});
+
+		//console.log( g.checkIfPathExists( 0, 1) )
+		console.log( g.shortestPath( 'monte' , 'H') );
+		console.log(g);
 		this.setState({
 			graph: g
 		})
@@ -47,7 +41,7 @@ class GraphList extends React.Component{
 	render(){
 		return(
 			<div>
-				{this.renderGraphInfo()}
+
 			</div>
 		);
 	}

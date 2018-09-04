@@ -14,5 +14,3 @@ class Node {
 }
 
 export default Node ;
-
-export const nodeComparator = (a,b) => { return a.node.data.numValue - b.node.data.numValue }

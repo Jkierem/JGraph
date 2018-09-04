@@ -1,25 +1,26 @@
 class PriorityQueue{
-		constructor( cmp, items = [] ){
-			this.items = items
-			this.cmp = cmp
-		}
+  constructor( nodes=[] ){
+    this._nodes=nodes
+  }
 
-		sort = () => {
-			if( this.cmp === undefined ){
-				this.items.sort()
-			}else{
-				this.items.sort(this.cmp)
-			}
-		}
+  enqueue = (priority, key) => {
+    this._nodes.push({key: key, priority: priority });
+    this.sort();
+  }
 
-		push = ( item ) => {
-			this.items.push(item)
-			this.sort()
-		}
+  dequeue = () => {
+    return this._nodes.shift().key;
+  }
 
-		front = () => {
-			return this.items.shift()
-		}
+  sort = () => {
+    this._nodes.sort(function (a, b) {
+      return a.priority - b.priority;
+    });
+  }
+
+  isEmpty = () => {
+    return !this._nodes.length;
+  };
 }
 
-export default PriorityQueue;
+export default PriorityQueue
