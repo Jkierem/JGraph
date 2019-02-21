@@ -1,5 +1,5 @@
-import AbstractGraphStrategy from './AbstractGraphStrategy'
-import { isDefined , keysOf } from '../Utils'
+import AbstractGraphStrategy from '../AbstractGraphStrategy'
+import { isDefined , keysOf } from '../../Utils'
 
 class AdjacencyMatrix extends AbstractGraphStrategy {
   constructor(vertexFactory){

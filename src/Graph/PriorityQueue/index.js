@@ -4,8 +4,8 @@ const priority = prop("priority")
 const DefaultSorter = (a,b) => priority(a) - priority(b)
 
 class PriorityQueue{
-  constructor( nodes=[] , sorter=DefaultSorter ){
-    this._nodes = nodes
+  constructor( sorter=DefaultSorter ){
+    this._nodes = []
     this._sorter = sorter
   }
 

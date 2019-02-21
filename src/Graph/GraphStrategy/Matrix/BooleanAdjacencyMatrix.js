@@ -1,5 +1,5 @@
 import AdjacencyMatrix from './AdjacencyMatrix'
-import { isDefined , keysOf } from '../Utils'
+import { isDefined , keysOf } from '../../Utils'
 
 class BooleanAdjacencyMatrix extends AdjacencyMatrix {
   constructor(vertexFactory){

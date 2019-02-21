@@ -2,10 +2,18 @@ export { default as Graph } from './Graph';
 
 //Graph Strategy
 export { default as AbstractGraphStrategy } from './GraphStrategy/AbstractGraphStrategy'
-export { default as AdjacencyMatrix } from './GraphStrategy/AdjacencyMatrix'
-export { default as BooleanAdjacencyMatrix } from './GraphStrategy/BooleanAdjacencyMatrix'
-export { default as UndirectedAdjacencyMatrix } from './GraphStrategy/UndirectedAdjacencyMatrix'
-export { default as UndirectedBooleanAdjacencyMatrix } from './GraphStrategy/UndirectedBooleanAdjacencyMatrix'
+
+//Matrix
+export { default as AdjacencyMatrix } from './GraphStrategy/Matrix/AdjacencyMatrix'
+export { default as BooleanAdjacencyMatrix } from './GraphStrategy/Matrix/BooleanAdjacencyMatrix'
+export { default as UndirectedAdjacencyMatrix } from './GraphStrategy/Matrix/UndirectedAdjacencyMatrix'
+export { default as UndirectedBooleanAdjacencyMatrix } from './GraphStrategy/Matrix/UndirectedBooleanAdjacencyMatrix'
+
+//List
+export { default as AdjacencyList } from './GraphStrategy/List/AdjacencyList'
+export { default as BooleanAdjacencyList } from './GraphStrategy/List/BooleanAdjacencyList'
+export { default as UndirectedAdjacencyList } from './GraphStrategy/List/UndirectedAdjacencyList'
+export { default as UndirectedBooleanAdjacencyList } from './GraphStrategy/List/UndirectedBooleanAdjacencyList'
 
 //Node Factory
 export { default as AbstractNodeFactory } from './NodeFactory/AbstractNodeFactory'

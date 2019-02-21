@@ -1,7 +1,6 @@
 import {
   NamedVertexFactory as NodeFactory ,
-  UndirectedBooleanAdjacencyMatrix as Strategy,
-  BooleanAdjacencyMatrix,
+  UndirectedAdjacencyList as Strategy,
   Graph
 } from '../Graph'
 
@@ -20,4 +19,3 @@ g.addEdge( "colombia" , "bolivia" , 25 )
 console.log( g.getAllEdges() )
 console.log( g.getNeighbors("colombia") )
 console.log( g.getNeighbors("brazil") )
-console.log( Strategy.prototype instanceof BooleanAdjacencyMatrix )
