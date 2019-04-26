@@ -26,6 +26,7 @@ const t = new Tree();
 t.addPath("a/b/c/d")
 t.addPath("a/x/z");
 t.addPath("a/b/e");
+t.addPath("h/u")
 
 console.log(t);
 console.log("root: ", t.getLevel(0))
