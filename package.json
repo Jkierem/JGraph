@@ -19,8 +19,8 @@
   },
   "scripts": {
     "start": "concurrently \"yarn build:watch\"  \"yarn docs\"",
-    "build": "babel src/Graph -d jgraph --copy-files",
-    "build:watch": "babel src/Graph -w -d jgraph --copy-files",
+    "build": "babel src/Structures -d jgraph --copy-files",
+    "build:watch": "babel src/Structures -w -d jgraph --copy-files",
     "docs": "webpack-dev-server --mode development",
     "docs:prod": "webpack --mode production"
   },

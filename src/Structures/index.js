@@ -19,6 +19,11 @@ export { default as UndirectedBooleanAdjacencyList } from './GraphStrategy/List/
 export { default as AbstractNodeFactory } from './NodeFactory/AbstractNodeFactory'
 export { default as NamedVertexFactory } from './NodeFactory/NamedVertexFactory'
 export { default as GenericNodeFactory } from './NodeFactory/GenericNodeFactory'
+export { default as TreeNodeFactory } from './NodeFactory/TreeNodeFactory'
 
 //PriorityQueue
 export { default as PriorityQueue } from './PriorityQueue'
+
+//N-Ary Tree
+export { default as Tree } from './Tree';
+

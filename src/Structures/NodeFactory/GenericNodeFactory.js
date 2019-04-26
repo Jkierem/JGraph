@@ -1,19 +1,23 @@
 import AbstractNodeFactory from './AbstractNodeFactory'
 
 class GenericNodeFactory extends AbstractNodeFactory {
-  constructor(){
+  constructor() {
     super()
   }
 
-  create(key,value){
+  static create(key, value) {
     return {
       key,
       value
     }
   }
 
-  compare(a,b){
-    return a.key == b.key ? 0 : 1 ;
+  static compare(a, b) {
+    return a.key == b.key ? 0 : 1;
+  }
+
+  static equals(a, b) {
+    return GenericNodeFactory.compare(a, b) == 0
   }
 }
 

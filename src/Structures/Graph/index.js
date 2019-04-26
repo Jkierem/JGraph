@@ -1,13 +1,13 @@
 import { AdjacencyMatrix } from '../GraphStrategy'
 import { NamedVertexFactory } from '../NodeFactory'
 
-class Graph{
-  constructor( nodeFactory=NamedVertexFactory , graphStrategy=AdjacencyMatrix ){
-    this.nodeFactory = new nodeFactory()
+class Graph {
+  constructor(nodeFactory = NamedVertexFactory, graphStrategy = AdjacencyMatrix) {
+    this.nodeFactory = nodeFactory;
     this.graphStrategy = new graphStrategy(this.nodeFactory)
   }
 
-  addNode = (...args) =>{
+  addNode = (...args) => {
     return this.graphStrategy.addNode(...args)
   };
 

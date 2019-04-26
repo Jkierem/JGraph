@@ -1,22 +1,26 @@
 import AbstractNodeFactory from './AbstractNodeFactory'
 
 class NamedVertexFactory extends AbstractNodeFactory {
-  constructor(){
+  constructor() {
     super()
   }
 
-  create(name){
+  static create(name) {
     return {
       name,
     }
   }
 
-  compare(a,b){
+  static compare(a, b) {
     return a.name.localeCompare(b.name)
   }
 
-  getKey(node){
+  static getKey(node) {
     return node.name
+  }
+
+  static equals(a, b) {
+    return NamedVertexFactory.compare(a, b) == 0
   }
 }
 
