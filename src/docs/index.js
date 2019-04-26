@@ -4,7 +4,7 @@ import {
   Graph,
   Tree
 } from '../Structures'
-import { prop } from '../Structures/Utils';
+import { prop, path } from '../Structures/Utils';
 
 const g = new Graph(NodeFactory, Strategy)
 const nf = NodeFactory
@@ -34,3 +34,7 @@ console.log("level 2:", t.getLevel(2))
 console.log("level 3:", t.getLevel(3))
 console.log(t.getLevel(3)[0].getRootPath().map(prop("key")))
 console.log(t.getLevel(2)[2].getRootPath().map(prop("key")))
+
+console.log(path('a.b.c')({
+  a: { b: { c: { d: 5 } } }
+}))

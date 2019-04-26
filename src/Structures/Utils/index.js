@@ -3,15 +3,21 @@ export const abstractMethodError = (methodName) => {
 }
 
 //curryed funks
-export const prop = (name) => (obj) => obj ?.[name];
+export const prop = (name) => (obj) => obj ? obj[name] : undefined;
+export const path = (path) => (obj) => path.split('.').reduce(
+  (acc, next) => {
+    return prop(next)(acc)
+  },
+  obj
+)
 
 //unary funks
 export const keysOf = (obj) => obj ? Object.keys(obj) : []
 export const isDefined = (obj) => obj !== undefined && obj !== null
 export const reverse = (arr) => arr.reduce((acc, obj) => [obj, ...acc], [])
 export const not = funk => (...args) => !funk(...args)
-export const head = (arr) => { const [head] = arr; return head }
-export const tail = (arr) => { const [, ...tail] = arr; return tail }
+export const head = ([head]) => head
+export const tail = ([, ...tail]) => tail
 export const isEmpty = arr => arr.length == 0
 
 //binary funks
