@@ -3,7 +3,7 @@ export const abstractMethodError = (methodName) => {
 }
 
 //curryed funks
-export const prop = (name) => (obj) => obj ?.[name];
+export const prop = (name) => (obj) => obj ? obj[name] : undefined;
 
 //unary funks
 export const keysOf = (obj) => obj ? Object.keys(obj) : []
@@ -16,7 +16,7 @@ export const isEmpty = arr => arr.length == 0
 
 //binary funks
 export const equals = (a, b) => a == b;
-export const binaryUnion = (arr1, arr2) => [...arr1, ...arr2].reduce((acc, cur) => acc.includes(cur) ? acc : [...acc, cur], []);
+export const binaryUnion = (arr1, arr2) => [...new Set([...arr1, ...arr2])]
 export const asymEquals = (obj1, obj2) => keysOf(obj1).every(key => obj1[key] == obj2[key])
 export const shallowEquals = (obj1, obj2) => union(keysOf(obj1), keysOf(obj2)).map(prop).every(keyOf => equals(keyOf(obj1), keyOf(obj2)));
 
